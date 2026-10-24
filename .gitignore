@@ -1,0 +1,35 @@
+# ─────────────────────────────────────────────────────────────
+# NEVER COMMIT MALWARE SAMPLES OR RUNNABLE/RECONSTRUCTABLE CODE
+# These are live threat artefacts. Publishing them distributes malware.
+# ─────────────────────────────────────────────────────────────
+pdfeditor.js
+pdfeditor.beauty.js
+pdfeditor.decoded.js
+pdfeditor.named.js
+pdfeditor.readable.js
+preload.js
+package.json
+Utilityaddon.node
+*.node
+*.exe
+*.dll
+*.pcapng
+
+# Deobfuscation working files (contain extracted malicious strings/arrays)
+table.json
+array.txt
+allstr.txt
+words.txt
+_arr.js
+_dec.js
+_iife.js
+
+# Raw Swedish working notes contain personal/network details — keep local, not public.
+# Remove these lines if you have sanitized them and want them published.
+01-handelselogg.md
+02-arkitektur-skadlig-kod.md
+03-sanering-atgarder.md
+
+# OS / editor noise
+.DS_Store
+*.swp
