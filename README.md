@@ -37,6 +37,7 @@ Use this material to learn how such threats are triaged, analysed and removed �
 | [`docs/incident-log.md`](docs/incident-log.md) | Full chronological account: network capture → host triage → malware discovery → deobfuscation. |
 | [`docs/malware-architecture.md`](docs/malware-architecture.md) | How the threat is built: the three layers, command modes, persistence, and the credential-theft chain. |
 | [`docs/remediation.md`](docs/remediation.md) | How to remove it, restore protection, and contain the damage from stolen credentials. |
+| [`tools/`](tools/) | Clean, reusable analysis tools: a static obfuscator.io deobfuscator and a Tuya LAN-discovery decryptor. |
 
 ## TL;DR of the case
 
@@ -66,6 +67,12 @@ Use this material to learn how such threats are triaged, analysed and removed �
 
 ## Toolchain
 
-Linux (Parrot OS), `tshark`, `nmap`, OpenSSH, and a custom Python deobfuscator for the
-obfuscator.io string-array scheme. No malicious code was executed during analysis; the
-decoder was reimplemented in Python to recover strings statically.
+Linux (Parrot OS), `tshark`, `nmap`, OpenSSH, and custom Python tooling (see
+[`tools/`](tools/)): a static obfuscator.io deobfuscator and a Tuya discovery decryptor.
+No malicious code was executed during analysis — the string decoder was reimplemented in
+Python to recover strings statically.
+
+```bash
+# recover the readable form of an obfuscator.io-protected script (input is never run)
+python tools/deobfuscate.py sample.js -o sample.decoded.js
+```

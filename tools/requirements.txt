@@ -1,0 +1,2 @@
+# Only needed by tuya_discovery.py. The obfuscator.io deobfuscator is stdlib-only.
+cryptography>=42.0
